@@ -1,11 +1,10 @@
 require 'sinatra/base'
 
 class MockInhalt < Sinatra::Base
+  set :port, 8080
+
   get '/' do
     'Hello MockInhalt!'
   end
-
-  # start the server if ruby file executed directly
-  run! if app_file == $0
 end
 
