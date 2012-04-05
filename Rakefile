@@ -29,7 +29,7 @@ task :build => BUILT_GEM
 
 task :install => BUILT_GEM do
   vm = Vagrant::Environment.new.vms[:default]
-  vm.channel.execute "sudo gem install /vagrant/#{PACKAGE_DIR}/#{APP_NAME}-#{MockInhalt::VERSION}.gem"
+  vm.channel.execute "sudo gem install /vagrant/#{BUILT_GEM}"
 end
 
 task :run do
