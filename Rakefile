@@ -1,4 +1,11 @@
+$:.unshift File.expand_path("../lib", __FILE__)
+
 require 'vagrant'
+
+require 'mock_inhalt/version'
+
+PACKAGE_DIR = "pkg"
+APP_NAME = "mock_inhalt"
 
 task :cucumber do
   sh "cucumber -f pretty"
@@ -11,7 +18,9 @@ task :up do
 end
 
 task :build do
-  system "gem build mock_inhalt.gemspec"
+  sh "gem build #{APP_NAME}.gemspec"
+  sh "mkdir -p #{PACKAGE_DIR}"
+  sh "mv #{APP_NAME}-#{MockInhalt::VERSION}.gem #{PACKAGE_DIR}"
 end
 
 task :default => [:build, :cucumber]
