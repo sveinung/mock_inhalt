@@ -1,13 +1,19 @@
 $:.unshift File.expand_path("../lib", __FILE__)
+$:.unshift File.expand_path("../features/support", __FILE__)
 
 require 'vagrant'
 
 require 'mock_inhalt/version'
+require 'test_client'
 
 PACKAGE_DIR = "pkg"
 APP_NAME = "mock_inhalt"
 APP_GEM = "#{APP_NAME}-#{MockInhalt::VERSION}.gem"
 BUILT_GEM = File.join(PACKAGE_DIR, APP_NAME)
+
+task :start_tc do
+  TestClient.run!
+end
 
 task :cucumber do
   sh "cucumber -f pretty"
