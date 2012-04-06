@@ -4,7 +4,6 @@ Feature: Mocking an iframe
   I want to be able to mock the content of iframes
 
   Scenario: Go to mocked page via iframe
-    Given I have a page with a mocked iframe
-    When The page gets loaded
-    Then I should see the mocked page
+    Given I am on the "http://localhost:8081/test" page
+    Then I should see the "Mocking your page"
 
