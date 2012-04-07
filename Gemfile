@@ -8,5 +8,6 @@ gem 'vagrant'
 group :test do
   gem 'capybara'
   gem 'cucumber-sinatra'
+  gem 'rspec'
 end
 
