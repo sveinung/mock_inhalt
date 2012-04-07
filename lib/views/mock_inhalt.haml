@@ -3,3 +3,10 @@
     %title MockInhalt
   %body
     %h1 Mocking your page
+    #links_out
+      - params.keys.each do |name|
+        - value = params[name]
+        .link_out
+          %a{:href => value}
+            = name
+

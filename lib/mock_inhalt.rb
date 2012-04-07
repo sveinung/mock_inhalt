@@ -8,5 +8,9 @@ class MockInhalt < Sinatra::Base
   get '/' do
     haml :mock_inhalt
   end
+
+  post '/' do
+    haml :mock_inhalt
+  end
 end
 
