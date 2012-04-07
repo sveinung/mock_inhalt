@@ -9,6 +9,7 @@ require 'capybara/cucumber'
 require 'rspec'
 
 Capybara.app = MockInhalt
+Capybara.default_driver = :selenium
 
 class MockInhaltWorld
   include Capybara::DSL
