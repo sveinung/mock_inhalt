@@ -10,4 +10,7 @@ Feature: Mocking an iframe
   Scenario: Sending the return URLs
     Given I am on the "http://localhost:8081/test" page
     When I click the "Send" button
-    Then I should see the the provided link "error" inside "mock_iframe"
+    Then Inside "mock_iframe" I should see the following links:
+      | link   |
+      | error  |
+      | cancel |
