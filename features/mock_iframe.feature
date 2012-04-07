@@ -5,5 +5,5 @@ Feature: Mocking an iframe
 
   Scenario: Go to mocked page via iframe
     Given I am on the "http://localhost:8081/test" page
-    Then I should see the "Mocking your page"
+    Then I should see "Mocking your page"
 
