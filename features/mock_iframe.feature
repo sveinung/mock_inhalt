@@ -5,5 +5,9 @@ Feature: Mocking an iframe
 
   Scenario: Go to mocked page via iframe
     Given I am on the "http://localhost:8081/test" page
-    Then I should see "Mocking your page"
+    Then I should see "Mocking your page" inside "mock_iframe"
 
+  Scenario: Sending the return URLs
+    Given I am on the "http://localhost:8081/test" page
+    When I click the "Send" button
+    Then I should see the the provided link "error" inside "mock_iframe"
