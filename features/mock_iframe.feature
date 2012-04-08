@@ -14,3 +14,9 @@ Feature: Mocking an iframe
       | link   |
       | error  |
       | cancel |
+
+  Scenario: Going back via one of the provided links
+    Given I am on the "http://localhost:8081/test" page
+    When I click the "Send" button
+    And I click the "error" link inside "mock_iframe"
+    Then I should see "Your error page" within "mock_iframe"
