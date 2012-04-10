@@ -2,6 +2,7 @@ $:.unshift File.expand_path("../lib", __FILE__)
 $:.unshift File.expand_path("../features/support", __FILE__)
 
 require 'vagrant'
+require 'cucumber/rake/task'
 
 require 'mock_inhalt/version'
 require 'test_client'
@@ -13,8 +14,8 @@ task :start_tc do
   TestClient.run!
 end
 
-task :cucumber do
-  sh "cucumber -f pretty"
+Cucumber::Rake::Task.new(:cucumber) do |t|
+  t.cucumber_opts = "-f pretty"
 end
 
 task :up do
