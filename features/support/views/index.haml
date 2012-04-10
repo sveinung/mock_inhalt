@@ -3,9 +3,10 @@
   %head
     %title MockInhalt Test
   %body
-    %form{:action => "http://localhost:8080", :method => "post", :target => "mock_frame"}
+    - url = "http://localhost:8080/mockinhalt"
+    %form{:action => url, :method => "post", :target => "mock_frame"}
       %input{:type => "submit", :value => "Send"}
       %input{:type => "hidden", :name => "error", :value => "http://localhost:8081/error"}
       %input{:type => "hidden", :name => "cancel", :value => "http://localhost:8081/cancel"}
-    %iframe{:id => "mock_iframe", :name => "mock_frame", :src => "http://localhost:8080"}
+    %iframe{:id => "mock_iframe", :name => "mock_frame", :src => url}
 
